@@ -9,11 +9,12 @@ VERSION_IMAGE   := ${BASE_IMAGE}:${VERSION}
 
 
 image:
-    docker build -f Dockerfile -t ${BASE_IMAGE} .
+
+	docker build -f Dockerfile -t ${BASE_IMAGE} .
 
 
 push:
-    docker login -u nikabba -p '0e663d0a-7706-4003-b1d3-52c6ec7febde'
-    docker tag ${BASE_IMAGE} ${VERSION_IMAGE}
-    docker push ${BASE_IMAGE}
-    docker push ${VERSION_IMAGE}
+	docker login -u nikabba -p '0e663d0a-7706-4003-b1d3-52c6ec7febde'
+	docker tag ${BASE_IMAGE} ${VERSION_IMAGE}
+	docker push ${BASE_IMAGE}
+	docker push ${VERSION_IMAGE}
